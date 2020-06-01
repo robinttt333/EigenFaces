@@ -1,0 +1,16 @@
+{% verbatim %}
+
+<div class="row">
+    <div class="col-md-4" ng-repeat="image in images">
+        <div class="img-thumbnail rounded image-container">
+            <a href="#" ng-click="imageClicked(image)">
+                <img ng-src="{{getImagePath(image)}}" alt="Lights" class="image" style="width:100%">
+                <div class="caption">
+                    <span class="image-caption">{{ getNameFromImage(image) }}</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<pagination start="start" end="end" total="total"></pagination>
+{% endverbatim %}

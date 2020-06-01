@@ -1,0 +1,18 @@
+{% verbatim %}
+<div class="text-center main-image-container">
+    <main-image name="name" pixels="pixels">
+</div>
+</div>
+<div class="sliders">
+    <div class="row" ng-repeat="vector in vectors">
+        <div class="col-md-3 ">
+            <label for="{{vector+1}}">Eigen Vector {{vector}}</label>
+        </div>
+        <div class="col-md-6">
+            <input type="range" class="custom-range" id="{{'customRange'+vector}}" min="{{list[$index][1] | number:0}}"
+                max="{{list[$index][0] | number:0}}" step=".5" value="{{weights[$index]}}" ng-model="weights[$index]"
+                ng-change="eigenFace()">
+        </div>
+    </div>
+</div>
+{% endverbatim %}

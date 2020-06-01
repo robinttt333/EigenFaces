@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EigenFaces</title>
+    <meta http-equiv="Cache-control" content="no-cache">
+
+    <link rel="icon" href="{% static "icons/icon.ico" %}" type="image/png" sizes="32*32">
+    <link rel="icon" href="{% static "icons/icon.ico" %}" type="image/png" sizes="64*64">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/bootstrap.4.1.3.min.css" %}">
+    <link rel="stylesheet" href="{% static "ngApp/css/index.css" %}">
+
+    <script src="{% static "js/angular.1.5.1.min.js"%}"></script>
+    <script src="{% static "js/ui-router.0.2.18.js"%}"></script>
+    <script src="{% static "js/jquery.3.3.1.min.js"%}"></script>
+
+    <script src="{% static "ngApp/js/app.js"%}"></script>
+
+    <script src="{% static "ngApp/js/controllers/homeController.js"%}"></script>
+    <script src="{% static "ngApp/js/components/splitLeft.js"%}"></script>
+    <script src="{% static "ngApp/js/components/splitRight.js"%}"></script>
+    <script src="{% static "ngApp/js/components/pagination.js"%}"></script>
+    <script src="{% static "ngApp/js/controllers/splitLeftController.js"%}"></script>
+    <script src="{% static "ngApp/js/controllers/splitRightController.js"%}"></script>
+    <script src="{% static "ngApp/js/controllers/paginationController.js"%}"></script>
+
+    <script src="{% static "ngApp/js/factories/fetchImagesService.js"%}"></script>
+    <script src="{% static "ngApp/js/factories/fetchEigenFace.js"%}"></script>
+
+    <script src="{% static "ngApp/js/directives/mainImage.js"%}"></script>
+
+</head>
+
+<body>
+    <!-- verbatim tags ensure that when template is passed through the render function
+    in django views,it does not do any preprocessing on it. -->
+    {% verbatim %}
+    <base href="/" />
+    <div ng-app="EigenFaces" class="app">
+        <ui-view>
+            <!-- Navbar will be loaded here -->
+        </ui-view>
+    </div>
+    {% endverbatim %}
+</body>
+
+</html>
